@@ -18,6 +18,9 @@
 		B5713BF527A0664A003F7AF8 /* MatchGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5713BF427A0664A003F7AF8 /* MatchGameTests.swift */; };
 		B5713BFF27A0664A003F7AF8 /* MatchGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5713BFE27A0664A003F7AF8 /* MatchGameUITests.swift */; };
 		B5713C0127A0664A003F7AF8 /* MatchGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5713C0027A0664A003F7AF8 /* MatchGameUITestsLaunchTests.swift */; };
+		B5F7285227A19C20008EF724 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7285127A19C20008EF724 /* CardModel.swift */; };
+		B5F7285427A1AF49008EF724 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7285327A1AF49008EF724 /* Card.swift */; };
+		B5F7285627A1B2BC008EF724 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7285527A1B2BC008EF724 /* CardCollectionViewCell.swift */; };
 		B70A67CB5DCEB2AD11E467A9 /* Pods_MatchGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23863BBE0E9B0275582C6DFD /* Pods_MatchGameTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		B5713BFA27A0664A003F7AF8 /* MatchGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5713BFE27A0664A003F7AF8 /* MatchGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGameUITests.swift; sourceTree = "<group>"; };
 		B5713C0027A0664A003F7AF8 /* MatchGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5F7285127A19C20008EF724 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		B5F7285327A1AF49008EF724 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B5F7285527A1B2BC008EF724 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		D393205003DD0739D5A49245 /* Pods-MatchGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchGame.debug.xcconfig"; path = "Target Support Files/Pods-MatchGame/Pods-MatchGame.debug.xcconfig"; sourceTree = "<group>"; };
 		D8CCDB1E0E251E1A5A914576 /* Pods_MatchGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,6 +148,9 @@
 				B5713BDD27A06649003F7AF8 /* AppDelegate.swift */,
 				B5713BDF27A06649003F7AF8 /* SceneDelegate.swift */,
 				B5713BE127A06649003F7AF8 /* ViewController.swift */,
+				B5F7285127A19C20008EF724 /* CardModel.swift */,
+				B5F7285327A1AF49008EF724 /* Card.swift */,
+				B5F7285527A1B2BC008EF724 /* CardCollectionViewCell.swift */,
 				B5713BE327A06649003F7AF8 /* Main.storyboard */,
 				B5713BE627A0664A003F7AF8 /* Assets.xcassets */,
 				B5713BE827A0664A003F7AF8 /* LaunchScreen.storyboard */,
@@ -371,7 +380,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5713BE227A06649003F7AF8 /* ViewController.swift in Sources */,
+				B5F7285227A19C20008EF724 /* CardModel.swift in Sources */,
+				B5F7285427A1AF49008EF724 /* Card.swift in Sources */,
 				B5713BDE27A06649003F7AF8 /* AppDelegate.swift in Sources */,
+				B5F7285627A1B2BC008EF724 /* CardCollectionViewCell.swift in Sources */,
 				B5713BE027A06649003F7AF8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
