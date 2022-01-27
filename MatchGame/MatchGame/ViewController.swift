@@ -16,9 +16,12 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
     @IBOutlet weak var collectionView: UICollectionView!
     
     
+    @IBOutlet weak var timerLabel: UILabel!
     
     let model = CardModel()
     var cardsArray = [Card]()
+    
+    var time: Timer?
     
     var firstFlippedCardIndex:IndexPath?
 
