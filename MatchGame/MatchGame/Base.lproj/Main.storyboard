@@ -23,14 +23,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AcW-nZ-a8R">
                                 <rect key="frame" x="60" y="0.0" width="792" height="393"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh6-fD-iBM">
-                                        <rect key="frame" x="295" y="0.0" width="202" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh6-fD-iBM">
+                                        <rect key="frame" x="296" y="0.0" width="200" height="32.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="cyU-zM-eNF"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="hxW-qA-QlH"/>
+                                            <constraint firstAttribute="width" constant="200" id="id9-CV-VXd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-DN-tzJ">
-                                        <rect key="frame" x="0.0" y="39" width="792" height="354"/>
+                                        <rect key="frame" x="0.0" y="42.5" width="792" height="350.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HME-mu-hcg">
                                             <size key="itemSize" width="128" height="128"/>
@@ -74,7 +79,11 @@
                                     </collectionView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="3dE-DN-tzJ" firstAttribute="top" secondItem="fh6-fD-iBM" secondAttribute="bottom" id="88G-ye-lVC"/>
+                                    <constraint firstItem="fh6-fD-iBM" firstAttribute="top" secondItem="AcW-nZ-a8R" secondAttribute="top" id="Vkk-kR-Ffo"/>
                                     <constraint firstItem="3dE-DN-tzJ" firstAttribute="width" secondItem="AcW-nZ-a8R" secondAttribute="width" id="a5a-qJ-QPC"/>
+                                    <constraint firstItem="fh6-fD-iBM" firstAttribute="leading" secondItem="AcW-nZ-a8R" secondAttribute="leading" id="hyl-ze-PFs"/>
+                                    <constraint firstAttribute="trailing" secondItem="fh6-fD-iBM" secondAttribute="trailing" id="tQo-eD-SIS"/>
                                 </constraints>
                             </stackView>
                         </subviews>

@@ -21,7 +21,8 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
     let model = CardModel()
     var cardsArray = [Card]()
     
-    var time: Timer?
+    var timer: Timer?
+    var milliseconds:Int = 10 * 1000
     
     var firstFlippedCardIndex:IndexPath?
 
@@ -35,7 +36,39 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         collectionView.delegate = self
         
         
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
     }
+    
+    //MARK: - Timer Methods
+    
+    @objc func timerFired() {
+        
+    milliseconds -= 1
+     
+        let seconds:Double = Double(milliseconds)/1000.0
+        timerLabel.text = String(format: "Time Remaining: %.2f", seconds)
+        
+        if milliseconds == 0 {
+            
+            timerLabel.textColor = UIColor.red
+            timer?.invalidate()
+            
+            checkForGameEnd()
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     //MARK: - Collection View Delegate Methods
     
@@ -119,6 +152,9 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
             cardOneCell?.remove()
             cardTwoCell?.remove()
             
+            
+            checkForGameEnd()
+            
         }
         else {
             
@@ -128,6 +164,48 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         }
         firstFlippedCardIndex = nil
     }
+    
+    func checkForGameEnd() {
+        
+        var hasWon = true
+        
+        for card in cardsArray {
+            
+            if card.isMatched == false {
+                
+                hasWon = false
+                break
+            }
+        }
+        
+        if hasWon == true {
+            showAlert(title: "Congratulations", message: "You've won the game")
+            
+        }
+        else {
+            if milliseconds <= 0 {
+                showAlert(title: "Time's up", message: "Sorry,better luck next time!")
+            }
+        }
+        
+    }
+    
+    func showAlert(title:String, message: String) {
+        
+        
+        let alert =  UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     
 }
 

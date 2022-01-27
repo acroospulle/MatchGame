@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="appicon_1024" translatesAutoresizingMaskIntoConstraints="NO" id="0d6-23-tIh">
-                                <rect key="frame" x="-201" y="217" width="896" height="548"/>
+                                <rect key="frame" x="-216" y="222" width="925" height="496"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
