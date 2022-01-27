@@ -26,6 +26,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             flipUp(speed: 0)
         }
         else {
+            flipDown(speed: 0)
             
         }
     }
@@ -33,11 +34,15 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     func flipUp(speed:TimeInterval = 0.3) {
         UIView.transition(from: backImageView, to: frontImageView, duration:speed, options: [.showHideTransitionViews,.transitionFlipFromLeft], completion: nil)
+        
+        card?.isFlipped = true
     }
     
     
     func flipDown(speed: TimeInterval = 0.3) {
         UIView.transition(from: frontImageView, to: backImageView, duration:speed, options: [.showHideTransitionViews,.transitionFlipFromLeft], completion: nil)
+        
+        card?.isFlipped = false
     }
     
     

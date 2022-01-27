@@ -56,7 +56,15 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         
         let cell = collectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
         
-        cell?.flipUp()
+        if cell?.card?.isFlipped == false {
+            cell?.flipUp()
+        }
+        
+        else {
+            cell?.flipDown()
+        }
+        
+       
         
     }
 }
