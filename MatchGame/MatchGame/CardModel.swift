@@ -10,10 +10,21 @@ import Foundation
 class CardModel {
     
     func getCards() -> [Card] {
+        
+       var generatedNumbers = [Int]()
+        
+        
+        
+        
+        
+        
         var generatedCards = [Card]()
         
-        for _ in 1...8 {
+        while generatedNumbers.count < 8 {
             let randonNumber = Int.random(in: 1...13)
+            
+            if generatedNumbers.contains(randonNumber) == false {
+            
             
             let cardOne = Card()
             let cardTwo = Card()
@@ -23,9 +34,14 @@ class CardModel {
             
             generatedCards += [cardOne,cardTwo]
             
+                
+                
+                generatedNumbers.append(randonNumber)
+                
+                
             print(randonNumber)
         }
-        
+    }
         generatedCards.shuffle()
         
         return generatedCards

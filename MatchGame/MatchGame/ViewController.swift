@@ -25,6 +25,8 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
     var milliseconds:Int = 10 * 1000
     
     var firstFlippedCardIndex:IndexPath?
+    
+    var soundPlayer = SoundManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,18 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        soundPlayer.playSound(effect: .shuffle)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     //MARK: - Timer Methods
     
@@ -107,11 +121,23 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if milliseconds <= 0 {
+            return
+        }
+        
+        
+        
+        
+        
+        
+        
         let cell = collectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
         
         if cell?.card?.isFlipped == false && cell?.card?.isMatched == false  {
             
             cell?.flipUp()
+            
+            soundPlayer.playSound(effect: .flip)
             
             if firstFlippedCardIndex == nil {
                 
@@ -146,6 +172,8 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         if cardOne.imageName == cardTwo.imageName {
             
             
+            soundPlayer.playSound(effect: .match)
+            
             cardOne.isMatched = true
             cardTwo.isMatched = true
             
@@ -157,6 +185,12 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
             
         }
         else {
+            
+            soundPlayer.playSound(effect: .nonmatch)
+            
+            cardOne.isMatched = false
+            cardTwo.isMatched = false
+            
             
             cardOneCell?.flipDown()
             cardTwoCell?.flipDown()
