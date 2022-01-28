@@ -1,7 +1,6 @@
 # MatchGame
 
-MatchGame is a game where user can find the matching set of cards before the time runs out. This game also comes with sounds. User can also see the launch screen and the app ic
-
+MatchGame is a game where user can find the matching set of cards before the time runs out. This game also comes with sounds. User can see app icon in home screen and a styled launch screen.
 
 
 
